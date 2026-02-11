@@ -1,6 +1,6 @@
 '''
 Script that goes to a specificed URL (an editorial containing the top popular movies streaming now) and scrapes what it claims as the top movies. It is updated frequently. 
-Also stores all this information in an excel file called "TopMoviesToday.xlsx" in the same directory as this Python script. 
+Also stores all this information in an excel file called "PopularMoviesToday.xlsx" in the same directory as this Python script. 
 This file will contain movie title, rotten score, link to movie page, and poster link.
 Uses 'Pandas', 'BeautifulSoup', and 'Openpyxl' to make all this possible
 '''
@@ -135,4 +135,5 @@ ws.add_table(theTable)
 wb.save(excelFileName)
 
 print("Successfully scraped information from: " + url + " into file: " + excelFileName)
+
     
