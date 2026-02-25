@@ -40,7 +40,7 @@ movies = soup.find_all('div',class_='row countdown-item')
 for movie in movies:
     
     #Grab the div where movie title, movie page, and tomato score is 
-    movieTitleDiv = movie.find(class_='article_movie_title')
+    movieTitleDiv = movie.find(class_='meta-data-wrapper')
     
     #Get the movie title
     movieTitle = movieTitleDiv.find('a').getText(strip=True)
@@ -49,7 +49,7 @@ for movie in movies:
     movieInfoLink = movieTitleDiv.find('a').get('href')
     
     #Get the tomato score
-    movieTomatoScore = movieTitleDiv.find(class_='tMeterScore').get_text(strip=True)
+    movieTomatoScore = movieTitleDiv.find(class_='meta-scores-wrapper').get_text(strip=True)
     if (movieTomatoScore == '- -'):
         movieTomatoScore = 0.0
     else:
@@ -137,3 +137,4 @@ wb.save(excelFileName)
 print("Successfully scraped information from: " + url + " into file: " + excelFileName)
 
     
+
